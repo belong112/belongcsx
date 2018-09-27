@@ -9,8 +9,8 @@ import random
 # 	piclist.append(random.randint(0,1000))
 
 def index(request):
-	random.seed(99)
+	random.seed(98)
 	piclist =[]
 	for _ in range(15):
-		piclist.append("https://picsum.photos/200/200/?image="+str(random.randint(1,1000)))
+		piclist.append("https://picsum.photos/300/300/?image="+str(random.randint(1,1000)))
 	return render(request,'index2.html',{'piclist':piclist})
