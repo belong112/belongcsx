@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh">
-{% load  staticfiles %}
+<!-- {% load  staticfiles %} -->
     <head>
     	<meta charset="utf-8">
     	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <title>THIS is my first page</title>
+        <link href="https://fonts.googleapis.com/css?family=Notable" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link href="{% static 'css/style2.css' %}" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="../static/css/style2.css">
         <div class ="date">2018/9/26</div>
     </head>
     <body>
+    	<div class="bg-img">
         <div class="container">
             <div class="blog">
                 <h1>Welcome to new york</h1>
@@ -64,10 +67,19 @@
                 </ul>
             </div>
             <div class="clearfix"></div>
+            <div>
+            	<p style="text-align:center; font-size: 200%; font-family: Notable">This is the picture wall</p> 
+            	{% for item in piclist %}
+            	<p>{{ item }}</p>
+            	<img src="https://picsum.photos/300/300?image="+'20'></img>
+            	{% endfor %}
+            	
+            </div>
             <div class = "end">
                 <a href="https://www.facebook.com/profile.php?id=100000890692143" target="_blank"><img src ="doggy-profile_image-49d8ec3d807795ef-300x300.jpeg" width=200px></a>
                 <p class = name> belong </p>
             </div>
         </div>
+    	</div>
     </body>
 </html>
