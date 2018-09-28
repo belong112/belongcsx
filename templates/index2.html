@@ -9,6 +9,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link href="{% static 'css/style2.css' %}" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="../static/css/style2.css">
+        <script type="text/javascript" src="../static.js.js.js"></script>
+
         <div class ="date">2018/9/26</div>
     </head>
     <body>
@@ -56,8 +58,24 @@
                     Welcome to New York
                 </p>
 
-                <h2> yeah</h2>
-                <p class="main">hello</p>
+                <h2>烏牛欄大護法</h2>
+                <p class="main">
+                	錯誤 本無求饒赦
+					覺悟 閣毋準註煞
+					今日時機已來
+					時代輪迴流轉
+					穿山林 阿修羅
+					過雺霧 阿修羅
+					玄武翻身 朱雀飛啼
+					白虎吼喝 青龍滾絞
+					眾 神 聽 令 萬 獸 護 法
+					望天也保庇
+					保庇彼咧人 圓百年夢
+					拚生死 幻化運命
+					猶原 不復萬劫
+					敢講百年空？
+					希望佇佗位
+				</p>
             </div>
             <div class="others">
                 <ul>
@@ -68,17 +86,28 @@
             </div>
             <div class="clearfix"></div>
             <div>
-            	<p style="text-align:center; font-size: 200%; font-family: Notable">This is the picture wall</p> 
+            	<p style="text-align:center; font-size: 200%; font-family: Notable">This is the picture wall<br>Plz click the pictures</p> 
             	{% for i in piclist %}
-            	<img src="{{i}}"></img>
-            	{% endfor %}
-            	
+            	<a href= "{% url 'pic' i %}"><img src="https://picsum.photos/300/300/?image={{i}}" onmouseover="big(this)" onmouseout="normal(this)"></a>
+            	{% endfor %}            	
             </div>
             <div class = "end">
-                <a href="https://www.facebook.com/profile.php?id=100000890692143" target="_blank"><img src ="doggy-profile_image-49d8ec3d807795ef-300x300.jpeg" width=200px></a>
+                <a href="https://www.facebook.com/profile.php?id=100000890692143" target="_blank"><img src ="https://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/38471367_2056684067698018_6804010894524153856_n.jpg?_nc_cat=108&oh=a3f338531b6d8e446516fdd8cdd0e31b&oe=5C1B054D" width=200px></a>
                 <p class = name> belong </p>
             </div>
         </div>
     	</div>
     </body>
 </html>
+
+<script>
+	function big(argument) {
+		argument.style.height ="400px";
+		argument.style.width = "400px";
+		// body...
+	}
+	function normal(argument){
+		argument.style.height =" 300px";
+		argument.style.width = "300px";
+	}
+</script>
