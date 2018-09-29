@@ -6,18 +6,19 @@
 ---
 ## Week1
 
-簡單
+1.學會終端機簡單操作
 
 ---
 ## Week2
 
-放上一點html+css的網頁
-熟悉git push/git pull/heroku
+1.放上一點html+css的網頁
+1.熟悉git push/git pull/heroku
 
 ---
 ## Week3
 
-玩了url&templates
-在網頁中利用fro迴圈插入圖片
+1.玩了url&templates
+1.在網頁中利用fro迴圈插入圖片
+1.利用id&herf 跳至某段落 
 
 ---
