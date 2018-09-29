@@ -1,12 +1,12 @@
 # Introduce myself
 
-嗨大家好，我是電機系大三邱昱禎，這是我的DjangoClass的作業repo<>
+嗨大家好，我是電機系大三邱昱禎，這是我的DjangoClass的作業repo    
 以下是我的heroku網站連結：https://belongcsx.herokuapp.com/
 
 ---
 ## Week1
 
-1.學會終端機簡單操作
+1. 學會終端機簡單操作
 
 ---
 ## Week2
