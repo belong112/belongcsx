@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh">
-<!-- {% load  staticfiles %} -->
+{% load  staticfiles %}
     <head>
     	<meta charset="utf-8">
     	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -17,7 +17,7 @@
     	<div class="bg-img">
         <div class="container">
             <div class="blog">
-                <h1>Welcome to new york</h1>
+                <h1 id="newyork">Welcome to new york</h1>
                 <p class="main">
                     Walkin' through a crowd, the village is a glow
                     Kaleidoscope of loud heartbeats under coats
@@ -58,37 +58,63 @@
                     Welcome to New York
                 </p>
 
-                <h2>烏牛欄大護法</h2>
-                <p class="main">
-                	錯誤 本無求饒赦
-					覺悟 閣毋準註煞
-					今日時機已來
-					時代輪迴流轉
-					穿山林 阿修羅
-					過雺霧 阿修羅
-					玄武翻身 朱雀飛啼
-					白虎吼喝 青龍滾絞
-					眾 神 聽 令 萬 獸 護 法
-					望天也保庇
-					保庇彼咧人 圓百年夢
-					拚生死 幻化運命
-					猶原 不復萬劫
-					敢講百年空？
-					希望佇佗位
+				<h2 id="girl">Galway girl</h2>
+				<p>
+					She played the fiddle in an Irish band
+					But she fell in love with an English man
+					Kissed her on the neck and then I took her by the hand
+					Said, "baby, I just want to dance"
+					I meet her on Grafton street right outside of the bar
+					She shared a cigarette with me while her brother played the guitar
+					She asked me what does it mean, the Gaelic ink on your arm?
+					Said it was one of my friend's songs, do you want to drink on?
+					She took Jamie as a chaser, Jack for the fun
+					She got Arthur on the table with Johnny riding as a shotgun
+					Chatted some more, one more drink at the bar
+					Then put Van on the jukebox, got up to dance
+					You know, she played the fiddle in an Irish band
+					But she fell in love with an English man
+					Kissed her on the neck and then I took her by the hand
+					Said, "baby, I just want to dance"
+					With my pretty little Galway girl
+					You're my pretty little Galway girl
+					You know she beat me at darts and then she beat me at pool
+					And then she kissed me like there was nobody else in the room
+					As last orders were called was when she stood on the stool
+					After dancing to Kaleigh, singing to trad tunes
+					I never heard Carrickfergus ever sang so sweet
+					A capella in the bar using her feet for a beat
+					Oh, I could have that voice playing on repeat for a week
+					And in this packed out room swear she was singing to me
+					You know, she played the fiddle in an Irish band
+					But she fell in love with an English man
+					Kissed her on the neck and then I took her by the hand
+					Said, "baby, I just want to dance"
+					My pretty little Galway girl
+					My, my, my, my, my, my, my Galway girl
+					My, my, my, my, my, my, my Galway girl
 				</p>
             </div>
+            <!-- <div class="others">
+                <ul>
+                    <a href="#newyork"><li>first blog</li></a>
+                    <a href="#cow"><li>second blog</li></a>
+                    <a href="#girl"><li>third blog</li></a>
+                </ul>
+            </div> -->
             <div class="others">
                 <ul>
-                    <li>first blog</li>
-                    <li>second blog</li>
-                    <li>third blog</li>
+                {% for musicdata in datas %}
+                    <a href="{{musicdata.url}}" target="_blank"><li>{{musicdata.artist}}-{{musicdata.song}}</li></a>
+                {% endfor %}
                 </ul>
             </div>
+
             <div class="clearfix"></div>
             <div>
             	<p style="text-align:center; font-size: 200%; font-family: Notable">This is the picture wall<br>Plz click the pictures</p> 
             	{% for i in piclist %}
-            	<a href= "{% url 'pic' i %}"><img src="https://picsum.photos/300/300/?image={{i}}" onmouseover="big(this)" onmouseout="normal(this)"></a>
+            	<a href= "{% url 'pic' i %}"><img class="gg" src="https://picsum.photos/300/300/?image={{i}}"></a>
             	{% endfor %}            	
             </div>
             <div class = "end">
@@ -111,3 +137,5 @@
 		argument.style.width = "300px";
 	}
 </script>
+<!-- onmouseover="big(this)" onmouseout="normal(this)" -->
+<!-- <a data-flickr-embed="true"  href="https://www.flickr.com/photos/152977080@N03/32764885503/" title="Steinweg, Germany"><img src="https://farm3.staticflickr.com/2908/32764885503_ba8c6c628a_b.jpg" width="1024" height="576" alt="Steinweg, Germany"></a> -->
