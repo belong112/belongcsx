@@ -77,11 +77,11 @@ WSGI_APPLICATION = 'helloworld.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': '0000',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME' : 'test',
+        'USER' : 'postgres',
+        'PASSWORD' : '0000',
+        'HOST' : '',
+        'PORT' : '',
     }
 }
 # import dj_database_url

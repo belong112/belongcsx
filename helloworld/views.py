@@ -10,16 +10,16 @@ import random
 # 	piclist.append(random.randint(0,1000))
 
 def index(request):
-	# data1 = musicdata.objects.create(artist = "the fur", song = "stort stay",url = "https://www.youtube.com/watch?v=X2Ao9sdua4E")
-	# data2 = musicdata.objects.create(artist = "per se", song = "wonderline",url ="https://www.youtube.com/watch?v=I2rCFfh50N0")
-	# data3 = musicdata.objects.create(artist = "elephant gym", song = "underwater",url = "https://www.youtube.com/watch?v=jDDy-Vh55to")
+	# data1 = musicdata.objects.create(artist = "The fur", song = "stort stay",url = "X2Ao9sdua4E",style = "Alter")
+	# data2 = musicdata.objects.create(artist = "Per se", song = "wonderline",url ="I2rCFfh50N0",style = "Folk")
+	# data3 = musicdata.objects.create(artist = "Elephant gym", song = "underwater",url = "jDDy-Vh55to",style = "Rock")
 	datas = musicdata.objects.all()
 
-	random.seed()
-	piclist =[]
-	for _ in range(15):
-		piclist.append(random.randint(1,1500))
-	return render(request,'index2.html',locals())
+	# random.seed()
+	# piclist =[]
+	# for _ in range(15):
+	# 	piclist.append(random.randint(1,1500))
+	return render(request,'index.html',locals())
 
 def picture(request,picid):
 	return render(request,'picture.html',{'picid':picid})
