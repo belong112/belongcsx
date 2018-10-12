@@ -10,9 +10,9 @@ import random
 # 	piclist.append(random.randint(0,1000))
 
 def index(request):
-	data1 = musicdata.objects.create(artist = "The fur", song = "stort stay",url = "X2Ao9sdua4E",style = "Alter")
-	data2 = musicdata.objects.create(artist = "Per se", song = "wonderline",url ="I2rCFfh50N0",style = "Folk")
-	data3 = musicdata.objects.create(artist = "Elephant gym", song = "underwater",url = "jDDy-Vh55to",style = "Rock")
+	# data1 = musicdata.objects.create(artist = "The fur", song = "stort stay",url = "X2Ao9sdua4E",style = "Alter")
+	# data2 = musicdata.objects.create(artist = "Per se", song = "wonderline",url ="I2rCFfh50N0",style = "Folk")
+	# data3 = musicdata.objects.create(artist = "Elephant gym", song = "underwater",url = "jDDy-Vh55to",style = "Rock")
 	datas = musicdata.objects.all()
 	# random.seed()
 	# piclist =[]
