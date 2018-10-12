@@ -14,7 +14,6 @@ def index(request):
 	# data2 = musicdata.objects.create(artist = "Per se", song = "wonderline",url ="I2rCFfh50N0",style = "Folk")
 	# data3 = musicdata.objects.create(artist = "Elephant gym", song = "underwater",url = "jDDy-Vh55to",style = "Rock")
 	datas = musicdata.objects.all()
-
 	# random.seed()
 	# piclist =[]
 	# for _ in range(15):
@@ -23,3 +22,21 @@ def index(request):
 
 def picture(request,picid):
 	return render(request,'picture.html',{'picid':picid})
+
+def add(request):
+	if 'ok' in request.POST:
+		artist = request.POST['artist']
+		song = request.POST['song']
+		url = request.POST['url']
+		style = request.POST['style']
+		musicdata.objects.create(artist = artist,song = song,url =url, style = style)
+	return render(request,'add.html',locals())
+
+def newdata(request):
+	if 'ok' in request.POST:
+		artist = request.POST['artist']
+		song = request.POST['song']
+		url = request.POST['url']
+		style = request.POST['style']
+		musicdata.objects.create(artist = artist,song = song,url =url, style = style)
+	return render(request,'add.html',locals())

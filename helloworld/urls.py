@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
     path('pic/<int:picid>', views.picture , name='pic'),
+    path('add/' , views.add, name = 'add'),
     # url(r'^pic$', views.picture, name="pic"),
 ]

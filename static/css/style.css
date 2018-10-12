@@ -408,6 +408,7 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	outline: none;
 	outline-offset: none;
 }
+
 /* Footer Section*/
 #footer {
 	background: #f6f6f6;
