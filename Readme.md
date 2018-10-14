@@ -22,3 +22,16 @@
 1. 利用id&herf 跳至某段落 
 
 ---
+## Week4
+
+1. 成功套入一個現成的模板
+1. [Django 操作資料庫教學](https://djangogirlstaipei.gitbooks.io/django-girls-taipei-tutorial/django/orm.html)
+1. [readme的語法](https://github.com/emn178/markdown#links)
+
+---
+## Week5
+
+1. 成功把sqlite3轉成postgresql
+1. heroku run 後面加指令就可以在heroku下指令
+1. 學習get/post的使用方式
+1. 想做個評分系統
