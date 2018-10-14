@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect   # 加入 redirect 套件
+from django.shortcuts import render,redirect,render_to_response   # 加入 redirect 套件
 from django.contrib.auth import authenticate
 from django.contrib import auth
 from django.http import HttpResponse
@@ -30,13 +30,5 @@ def add(request):
 		url = request.POST['url']
 		style = request.POST['style']
 		musicdata.objects.create(artist = artist,song = song,url =url, style = style)
-	return render(request,'add.html',locals())
+	return render_to_response('add.html',locals())
 
-def newdata(request):
-	if 'ok' in request.POST:
-		artist = request.POST['artist']
-		song = request.POST['song']
-		url = request.POST['url']
-		style = request.POST['style']
-		musicdata.objects.create(artist = artist,song = song,url =url, style = style)
-	return render(request,'add.html',locals())

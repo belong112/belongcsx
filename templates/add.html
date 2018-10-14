@@ -30,7 +30,7 @@
 <body>
 	<div class="section-title text-center center">
 		<p style="text-align:center; font-size: 60px">ADD YOUR SONG</p>
-		<form action="." method="get">
+		<form action="." method="post">
 		  Artist of the song:<br>
 		  <input type="text" name="artist" value="">
 		  <br>
@@ -48,6 +48,7 @@
 		  	<option value="Folk">Folk</option>
 		  </select>
 		  <br><br>
+		  <input type="hidden" name="ok" value="yes">
 		  <input class="btn" style="border-color: #222; width:70px" type="submit" value="Submit">
 		</form> 		
 	</div>
