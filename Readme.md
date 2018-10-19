@@ -35,3 +35,8 @@
 1. heroku run 後面加指令就可以在heroku下指令
 1. 學習get/post的使用方式
 1. 想做個評分系統
+
+---
+## Week6
+1. 創建Superuser帳號，可於admin頁面登入
+1. 創建login/logout的套件
