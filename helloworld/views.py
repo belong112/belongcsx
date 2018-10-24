@@ -1,27 +1,48 @@
 from django.shortcuts import render,redirect,render_to_response   # 加入 redirect 套件
 from django.contrib.auth import authenticate
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib import auth
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from guestbook.models import musicdata
 import random 
 
-# for i in xrange(1,15):
-# 	piclist.append(random.randint(0,1000))
-
 def index(request):
-	# data1 = musicdata.objects.create(artist = "The fur", song = "stort stay",url = "X2Ao9sdua4E",style = "Alter")
-	# data2 = musicdata.objects.create(artist = "Per se", song = "wonderline",url ="I2rCFfh50N0",style = "Folk")
-	# data3 = musicdata.objects.create(artist = "Elephant gym", song = "underwater",url = "jDDy-Vh55to",style = "Rock")
 	datas = musicdata.objects.all()
-	# random.seed()
-	# piclist =[]
-	# for _ in range(15):
-	# 	piclist.append(random.randint(1,1500))
 	return render(request,'index.html',locals())
 
-def picture(request,picid):
-	return render(request,'picture.html',{'picid':picid})
+def login(request):
+	if request.method == 'POST':
+		name = request.POST['username']
+		password = request.POST['password']
+		user = authenticate(username =name , password =password)
+		if user is not None:
+			if user.is_active:
+				auth.login(request,user)
+				return redirect('home')
+		else: 
+			message = 'error!'
+
+	return render(request,'login.html',locals())
+
+def register(request):
+	if request.method == 'POST':
+		name = request.POST['username']
+		password = request.POST['password']	
+
+		try:
+			user = User.objects.get(username = name)
+		except:
+			user = None
+
+		if user is not None:
+			message = 'Username already been used.'
+		else:
+			user = User.objects.create_user(username = name,password = password)
+			user.save()
+			message = 'register success.'
+			return redirect('home')
+	return render(request,'register.html',locals())
 
 def add(request):
 	if 'ok' in request.POST:
@@ -30,5 +51,7 @@ def add(request):
 		url = request.POST['url']
 		style = request.POST['style']
 		musicdata.objects.create(artist = artist,song = song,url =url, style = style)
+		return redirect('home')
+
 	return render_to_response('add.html',locals())
 
