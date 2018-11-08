@@ -424,3 +424,11 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 #footer a:hover {
 	color: #000;
 }
+.mybtn {
+	color: #777;
+	background-color: transparent;
+	border-radius: 0px;
+	border-color: #777;
+	padding: 1px 6px;
+	margin-bottom: 4px;
+}

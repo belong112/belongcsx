@@ -25,5 +25,11 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('login/',views.login),
     path('register/',views.register),
+    path('changepassword/',views.changepassword,name = 'change'),
+    path('myfav/<int:user_id>/delete/<int:song_id>/', views.delete),
+    path('myfav/<int:user_id>/', views.myfav , name = 'myfav'),
+    # url(r'^myfav/(?P<user_id>[0-9]+)/$',views.myfav,name = 'myfav'),
+    url(r'^addfav/(?P<song_id>[0-9]+)/(?P<user_id>[0-9]+)/$',views.addfav),
+    # url(r'^myfav/([0-9]+)/delete/(?P<song_id>[0-9]+)/(?P<user_id>[0-9]+)/$',views.delete),
     # url(r'^pic$', views.picture, name="pic"),
 ]

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load  staticfiles %}
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cs+X</title>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome/css/font-awesome.css' %}">
+
+<!-- Stylesheet
+    ================================================== -->
+<link rel="stylesheet" type="text/css"  href="{% static 'css/style.css' %}">
+<link rel="stylesheet" type="text/css"  href="{% static 'css/nivo-lightbox/nivo-lightbox.css' %}">
+<link rel="stylesheet" type="text/css"  href="{% static 'css/nivo-lightbox/default.css' %}">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="{% static 'js/modernizr.custom.js' %}"></script>
+</head>
+<body>
+
+	<div id="portfolio">
+  <div class="container">
+    <div class="section-title text-center center"><h1 style="font-size: 400%">{{n}}MY FAVORITE</h1>
+  	<form action = "." method="POST">
+  	<input style="padding: 7px; width: 300px" type="text" name="searchstr" placeholder="search...">
+    <button style="padding: 8px 12px" class="btn mybtn" type="submit"><i class="fa fa-search"></i></button>
+    <a style="padding: 8px 12px" href="{% url 'home' %}" class="btn mybtn"><i class="fa fa-home"></i></a>
+    </form>
+  	</div>
+    <div class="row">
+      <div class="portfolio-items">
+        {% for music in datas %}
+          {% if searchstr == " " or searchstr in music.artist or searchstr in music.song  %}
+          <div class="col-sm-6 col-md-4 col-lg-4 {{music.style}}" style="margin-bottom: 20px">
+            <p style="display: inline;">{{music.artist}} - {{music.song}}</p>
+            <button class="btn mybtn" onclick="location.href = 'delete/{{music.id}}'">delete</button>
+            <!-- <button class="btn mybtn" onclick="url()">more</button> -->
+            <iframe width="360" height="200" src="https://www.youtube.com/embed/{{music.url}}?showinfo=0&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+          {% endif %}
+        {% endfor %}  
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
