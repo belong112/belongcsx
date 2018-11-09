@@ -39,7 +39,7 @@ def myfav(request,user_id):
 def delete(request,song_id,user_id):
 	temp = favlink.objects.filter(userid = user_id, songid = song_id)
 	temp.delete()
-	return redirect('myfav')
+	return redirect('home')
 
 def changepassword(request):
 	if request.method == 'POST':
